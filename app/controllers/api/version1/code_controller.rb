@@ -1,7 +1,7 @@
 module Api
     module Version1
       class CodesController < ApplicationController
-        skip_before_action :verify_authenticity_token
+        skip_before_action :verify_authenticity_token , raise: false
 
         def ruby
         end

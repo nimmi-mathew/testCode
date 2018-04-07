@@ -1,7 +1,7 @@
 module Api
     module Version1
       class StepsController < ApplicationController
-        skip_before_action :verify_authenticity_token  
+        skip_before_action :verify_authenticity_token , raise: false
         def show
             chapter = Chapter.find_by_name(params[:name])
             p ".................................#{chapter}"
