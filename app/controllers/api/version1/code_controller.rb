@@ -10,7 +10,7 @@ module Api
             @code = params[:code]
             @codeResult = Sicuro.eval(@code)
             p "######################################## #{@codeResult}"
-            render json: {status: 'SUCCESS',  CGI::escapeHTML(@codeResult.stdout.to_s).gsub(/(?:\n\r?|\r\n?)/, '<br>')},status: :ok
+            render json:  CGI::escapeHTML(@codeResult.stdout.to_s).gsub(/(?:\n\r?|\r\n?)/, '<br>')
          end
       end
     end
