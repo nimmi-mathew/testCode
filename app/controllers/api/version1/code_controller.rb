@@ -7,7 +7,7 @@ module Api
         end
         def post_ruby
              require 'sicuro'
-            @code = params[:step][:code]
+            @code = params[:code]
             @codeResult = Sicuro.eval(@code)
             render json:  CGI::escapeHTML(@codeResult.stdout.to_s).gsub(/(?:\n\r?|\r\n?)/, '<br>')
          end
