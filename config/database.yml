@@ -83,4 +83,5 @@ production:
   database: codeRuby_production
   username: codeRuby
   adapter: postgresql
-  password: <%= ENV['CODERUBY_DATABASE_PASSWORD'] %>
+  host: localhost
+
