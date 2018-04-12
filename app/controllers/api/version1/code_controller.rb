@@ -10,7 +10,7 @@ module Api
             @code = params[:code]
             @codeResult = Sicuro.eval(@code)
             p "######################################## #{@codeResult}"
-            render json: @codeResult.stdout.to_s
+            render json: {result: @codeResult.stdout.to_s},status: :ok
             
          end
       end
