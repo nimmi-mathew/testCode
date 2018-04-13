@@ -26,12 +26,12 @@ chapter2 = Chapter.create!(
   language_id: "ruby"
 )
 chapter3 = Chapter.create!(
-  name: "Arrays & Hashes",
+  name: "Arrays and Hashes",
   description: "Arrays and Hashes are collections of data and objects in Ruby. They are widely used in all programming languages, hence making it one of the most vital piece of knowledge required for any developers. They are very similar yet possess some stark differences. Come find out more in this chapter",
   language_id: "ruby"
 )
 chapter4 = Chapter.create!(
-  name: "Loops & Iterations",
+  name: "Loops and Iterations",
   description: "Loops and Iterations allow you to access and loop over a large block of elements (i.e. an array) and work with each element as we iterate over it. Understand it as the repetitive execution of a piece of code for a given amount of repetitions over a block of data. Sounds complicated? Then you should check out this chapter now. ",
   language_id: "ruby"
 )
