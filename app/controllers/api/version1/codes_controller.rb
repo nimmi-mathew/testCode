@@ -5,7 +5,7 @@ module Api
 
         
         def post_ruby
-            require 'sicuro'
+            
             code = params[:code]
             step = params[:step]
             @step = Step.find(step)
@@ -19,10 +19,9 @@ module Api
                  @valid += 1 
                end
        
-            
-           
-         
-      end
+               
+           end
+           render json: {status: 'SUCCESS', testPass: @valid},status: :ok
     end
 
     def validateCode(code)
@@ -34,8 +33,11 @@ module Api
     end
 
     def testResult(code)
+      require 'sicuro'
+      p code
       @codeResult = Sicuro.eval(code)
-      CGI::escapeHTML(@codeResult.stdout.to_s).gsub(/(?:\n\r?|\r\n?)/, '<br>')
+      p "............................ #{@codeResult}"
+      (@codeResult.stdout).gsub(/(?:\n\r?|\r\n?)/, '<br>')
     end
 end
 end
