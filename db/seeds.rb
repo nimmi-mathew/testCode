@@ -79,6 +79,7 @@ Remember to Test your Code before Submitting!</li></ul>",
 step1.code_tests.create(input: "my_int.class", output: "Fixnum")
 step1.code_tests.create(input: "my_float.class", output: "Float")
 step1.code_tests.create(input: "my_string.class", output: "String")
+step1.code_tests.create(input: "[true, false].include? my_boolean", output: "true")
 
 
 
