@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     namespace 'version1' do
       resources :steps, only: [:index, :show],  param: :name
      
-      post 'code/ruby' => 'codes#post_ruby',  param: :code
+      post 'code/ruby' => 'codes#post_ruby'
     end
   end
 end
