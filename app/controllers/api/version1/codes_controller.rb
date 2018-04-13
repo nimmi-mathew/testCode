@@ -10,6 +10,7 @@ module Api
             step = params[:step]
             @step = Step.find(step)
             @valid = 0
+            @testCount = @step.code_tests.count
             @step.code_tests.each do |test|
             code = validateCode(code)
             @testcode = code + "\n print " + test.input 
@@ -21,7 +22,8 @@ module Api
        
                
            end
-           render json: {status: 'SUCCESS', testPass: @valid},status: :ok
+           @message = "#{@valid} out of #{@testCout} testcases passed"
+           render json: {status: 'SUCCESS', testPass: @valid, testCount: @testCount, message:@message },status: :ok
     end
 
     def validateCode(code)
