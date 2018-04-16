@@ -6,7 +6,7 @@ module Api
             name = params[:name].gsub('_',' ')
             chapter = Chapter.find_by_name(name)
             p ".................................#{chapter}"
-            @steps = chapter.steps
+            @steps = chapter.steps.order(:id)
             code_test = []
             @steps.each do |step|
               code_test << step.code_tests
